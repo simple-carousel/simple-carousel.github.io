@@ -1,0 +1,77 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<!-- <link rel="import" href="../../bower_components/iron-pages/iron-pages.html"> -->
+<!-- <link rel="import" href="../../bower_components/iron-image/iron-image.html"> -->
+<!-- <link rel="import" href="../../bower_components/iron-swipeable-container/iron-swipeable-container.html"> -->
+<!-- <link rel="import" href="../../bower_components/firebase-element/firebase-collection.html"> -->
+<!-- <link rel="import" href="../../bower_components/firebase-element/firebase-document.html"> -->
+<link rel="import" href="../../bower_components/sc-swiper/sc-swiper.html">
+
+<dom-module id="simple-carousel">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      
+      sc-swiper {
+        cursor: pointer;
+        width: 640px;
+        height: 320px;
+      }
+      .scrollbar {
+        height: 100px;
+      }
+    </style>
+
+
+    <sc-swiper pagination pagination-clickable keyboard-control loop>
+      <img src="http://lorempixel.com/640/320/cats">
+      <img src="http://lorempixel.com/640/320/fashion">
+      <img src="http://lorempixel.com/640/320/city">
+    </sc-swiper>
+
+    <sc-swiper class="scrollbar" scrollbar>
+      <img src="http://lorempixel.com/640/100/business">
+      <img src="http://lorempixel.com/640/100/nature">
+      <img src="http://lorempixel.com/640/100/people">
+    </sc-swiper>
+
+
+<!-- <iron-swipeable-container>
+
+    <template is="dom-bind">
+      <firebase-collection
+        order-by-child="url"
+        limit-to-first="5"
+        location="https://simple-carousel.firebaseio.com/images"
+        data="{{images}}"></firebase-collection>
+
+      <template is="dom-repeat" items="[[images]]" as="image">
+
+
+                <iron-image sizing="cover" preload fade
+                            style="width:640px; height:320px; background-color: lightgray;"
+                            src="[[image.image-url-en]]"></iron-image>
+
+
+      </template>
+    </template>
+<iron-swipeable-container> -->
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'simple-carousel',
+
+      properties: {
+        imgSrc: {
+          type: String,
+          notify: true,
+          value: 'http://lorempixel.com/640/320'
+        },
+      },
+
+    });
+  </script>
+</dom-module>
