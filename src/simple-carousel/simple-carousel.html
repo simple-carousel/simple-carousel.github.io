@@ -16,13 +16,16 @@
       sc-swiper {
         cursor: pointer;
         width: 640px;
+        max-width: 640px;
         height: 320px;
+        user-select: none;
+        -webkit-user-drag: none;
+        -webkit-tap-highlight-color: transparent;
       }
       .scrollbar {
         height: 100px;
       }
     </style>
-
 
     <sc-swiper pagination pagination-clickable keyboard-control loop>
       <img src="../../images/promo_tv_en_mobile.jpg">
@@ -47,7 +50,6 @@
 
       <template is="dom-repeat" items="[[images]]" as="image">
 
-
                 <iron-image sizing="cover" preload fade
                             style="width:640px; height:320px; background-color: lightgray;"
                             src="[[image.image-url-en]]"></iron-image>
@@ -56,6 +58,7 @@
       </template>
     </template>
 <iron-swipeable-container> -->
+
   </template>
 
   <script>
