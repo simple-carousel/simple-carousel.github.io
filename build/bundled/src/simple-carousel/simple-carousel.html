@@ -1,4 +1,5 @@
 <html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+ <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 
 
 
@@ -23,21 +24,66 @@
         -webkit-tap-highlight-color: transparent;
       }
       .scrollbar {
-        height: 100px;
+        height: 50px;
+        background-color: #fafafa;
+        padding-top: 12px;
       }
+      .container paper-button {
+        color: #2e3337;
+        background-color: #fff200;
+        box-shadow: inset 0px -2px 0px 0px rgba(255, 216, 0, 1);
+        -webkit-box-shadow: inset 0px -2px 0px 0px rgba(255, 216, 0, 1);
+        -moz-box-shadow: inset 0px -2px 0px 0px rgba(255, 216, 0, 1);
+        font: 12px/16px 'Open Sans', Arial;
+        font-weight: bold;
+        padding: 16px;
+        --paper-button-ink-color: #fff200;
+      }
+      a {
+        text-decoration: none;
+      }
+      .container {
+        background-color: #fafafa;
+        padding: 12px;
+        @apply(--layout-horizontal);
+        @apply(--layout-center-justified);
+      }
+
     </style>
 
+    <a href="http://m.bestbuy.ca/defaultpage.aspx?lang=en#/m/productlist.aspx?cid=20352&amp;fname=Current Offers&amp;fvalue=On Sale">
     <sc-swiper pagination="" pagination-clickable="" keyboard-control="" loop="">
-      <img src="../../images/promo_tv_en_mobile.jpg">
-      <img src="../../images/promo_tv_en_mobile.jpg">
-      <img src="../../images/promo_tv_en_mobile.jpg">
+      <img src="../../images/slide_laptops_en_mobile.jpg" alt="Save up to $150 on laptops" rel="/projects/_weekly/assets/2016_09/sep-16/slide_laptops_en.jpg">
+      <img src="../../images/slide_tvs_en_mobile.jpg" alt="Save on the latest TVs" rel="/projects/_weekly/assets/2016_09/sep-16/slide_tvs_en.jpg">
+      <img src="../../images/main_dotd_en_mobile.jpg" alt="DOTD" rel="/projects/_weekly/assets/2016_04/apr-29/main_dotd_en.jpg">
+      <img src="../../images/promo_tv_en_mobile.jpg" alt="flyer" rel="/projects/_weekly/assets/2016_03/mar-04/homeslide_flyer_en.jpg">
     </sc-swiper>
+    </a>
 
-    <sc-swiper class="scrollbar" scrollbar="">
-      <img src="../../images/buttons.png">
-      <img src="../../images/buttons.png">
+    <a href="http://m.bestbuy.ca/defaultpage.aspx?lang=en#/catalog/productdetails.aspx?ajax=true&amp;sku=10449276&amp;lang=en-CA">
+    <sc-swiper class="scrollbar" scrollbar="" slides-per-view="3">
+      <img src="../../images/slice2.png">
+      <img src="../../images/slice1.png">
+      <img src="../../images/slice2.png">
+      <img src="../../images/slice1.png">
+      <img src="../../images/slice3.png">
+      <img src="../../images/slice2.png">
+      <img src="../../images/slice1.png">
     </sc-swiper>
+    </a>
 
+    
+      
+        
+      
+
+      
+        
+      
+      
+        
+      
+    
 
 
 
