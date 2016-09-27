@@ -1,10 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
  <link rel="import" href="../../bower_components/paper-button/paper-button.html">
-<!-- <link rel="import" href="../../bower_components/iron-pages/iron-pages.html"> -->
-<!-- <link rel="import" href="../../bower_components/iron-image/iron-image.html"> -->
-<!-- <link rel="import" href="../../bower_components/iron-swipeable-container/iron-swipeable-container.html"> -->
-<!-- <link rel="import" href="../../bower_components/firebase-element/firebase-collection.html"> -->
-<!-- <link rel="import" href="../../bower_components/firebase-element/firebase-document.html"> -->
+ <link rel="import" href="../../bower_components/iron-image/iron-image.html">
+ <link rel="import" href="../../bower_components/firebase-element/firebase-collection.html">
+ <link rel="import" href="../../bower_components/firebase-element/firebase-document.html">
+<link rel="import" href="../../bower_components/iron-swipeable-pages/iron-swipeable-pages.html">
 <link rel="import" href="../../bower_components/sc-swiper/sc-swiper.html">
 
 <dom-module id="simple-carousel">
@@ -49,24 +48,52 @@
         @apply(--layout-center-justified);
       }
 
+      iron-image {
+        width: 100%;
+        height: 100%;
+      }
+
+      iron-swipeable-pages {
+        height: 324px;
+        width: 640px;
+        /*min-height: 160px;*/
+        /*max-height: 320px;*/
+        /*min-width: 320px;*/
+        /*max-width: 640px;*/
+        max-width: 100%;
+        @apply(--layout-flex);
+      }
+
+      iron-swipeable-pages > * {
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;          /* Likely future */
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+      }
+
     </style>
 
-    <a href="http://m.bestbuy.ca/defaultpage.aspx?lang=en#/m/productlist.aspx?cid=20352&fname=Current Offers&fvalue=On Sale">
-    <sc-swiper pagination pagination-clickable keyboard-control loop>
-      <img src="../../images/slide_laptops_en_mobile.jpg"
-           alt="Save up to $150 on laptops"
-           rel="/projects/_weekly/assets/2016_09/sep-16/slide_laptops_en.jpg">
-      <img src="../../images/slide_tvs_en_mobile.jpg"
-           alt="Save on the latest TVs"
-           rel="/projects/_weekly/assets/2016_09/sep-16/slide_tvs_en.jpg">
-      <img src="../../images/main_dotd_en_mobile.jpg"
-           alt="DOTD"
-           rel="/projects/_weekly/assets/2016_04/apr-29/main_dotd_en.jpg">
-      <img src="../../images/promo_tv_en_mobile.jpg"
-           alt="flyer"
-           rel="/projects/_weekly/assets/2016_03/mar-04/homeslide_flyer_en.jpg">
-    </sc-swiper>
-    </a>
+    <firebase-document
+            location="https://simple-carousel.firebaseio.com/images"
+            data="{{images}}"></firebase-document>
+
+    <iron-swipeable-pages id="ironCarousel" selected="{{slideIndex}}">
+      <div>
+        <iron-image style="width:100%px; height:320px; background-color: #fff;"
+                    sizing="cover" preload fade src="{{images.image1.value}}" alt="{{images.image1.altTextEn}}"></iron-image>
+      </div>
+      <div>
+        <iron-image style="width:100%px; height:320px; background-color: #fff;"
+                    sizing="cover" preload fade src="{{images.image2.value}}" alt="{{images.image2.altTextEn}}"></iron-image>
+      </div>
+      <div>
+        <iron-image style="width:100%px; height:320px; background-color: #fff;"
+                    sizing="cover" preload fade src="{{images.image3.value}}" alt="{{images.image3.altTextEn}}"></iron-image>
+      </div>
+    </iron-swipeable-pages>
 
     <!--<a href="http://m.bestbuy.ca/defaultpage.aspx?lang=en#/catalog/productdetails.aspx?ajax=true&sku=10449276&lang=en-CA">-->
     <sc-swiper class="scrollbar" scrollbar slides-per-view="3">
