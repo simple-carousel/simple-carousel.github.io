@@ -82,15 +82,15 @@
 
     <iron-swipeable-pages id="ironCarousel" selected="{{slideIndex}}">
       <div>
-        <iron-image style="width:100%px; height:320px; background-color: #fff;"
+        <iron-image style="width:100%; height:320px; background-color: #000;"
                     sizing="cover" preload fade src="{{images.image1.value}}" alt="{{images.image1.altTextEn}}"></iron-image>
       </div>
       <div>
-        <iron-image style="width:100%px; height:320px; background-color: #fff;"
+        <iron-image style="width:100%; height:320px; background-color: #fff;"
                     sizing="cover" preload fade src="{{images.image2.value}}" alt="{{images.image2.altTextEn}}"></iron-image>
       </div>
       <div>
-        <iron-image style="width:100%px; height:320px; background-color: #fff;"
+        <iron-image style="width:100%; height:320px; background-color: #fff;"
                     sizing="cover" preload fade src="{{images.image3.value}}" alt="{{images.image3.altTextEn}}"></iron-image>
       </div>
     </iron-swipeable-pages>
@@ -101,7 +101,7 @@
       <img src="../../images/slice1.png">
       <img src="../../images/slice2.png">
       <img src="../../images/slice1.png">
-      <!--<img src="../../images/slice3.png">-->
+      <img src="../../images/slice3.png">
       <img src="../../images/slice2.png">
       <img src="../../images/slice1.png">
     </sc-swiper>
@@ -153,7 +153,11 @@
           notify: true,
           value: 'http://lorempixel.com/640/320'
         },
-      },
+        slideIndex: {
+          type: Number,
+          value: 0
+        }
+      }
 
     });
   </script>
