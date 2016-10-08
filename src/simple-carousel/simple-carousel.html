@@ -17,15 +17,15 @@
         cursor: pointer;
         width: 640px;
         max-width: 640px;
-        height: 320px;
+        height: 300px;
         user-select: none;
         -webkit-user-drag: none;
         -webkit-tap-highlight-color: transparent;
       }
       .scrollbar {
-        height: 50px;
+        height: 40px;
         background-color: #fafafa;
-        padding-top: 12px;
+        /*padding-top: 12px;*/
       }
       .container paper-button {
         color: #2e3337;
@@ -54,8 +54,8 @@
       }
 
       iron-swipeable-pages {
-        height: 324px;
-        width: 640px;
+        height: 280px;
+        width: 100%;
         /*min-height: 160px;*/
         /*max-height: 320px;*/
         /*min-width: 320px;*/
@@ -82,7 +82,7 @@
 
     <iron-swipeable-pages id="ironCarousel" selected="{{slideIndex}}">
       <div>
-        <iron-image style="width:100%; height:270px; background-color: #fff;"
+        <iron-image style="width:100%; height:270px; background-color: #fff;" on-tap="tappedImage"
                     sizing="contain" preload fade src="{{images.image1.value}}" alt="{{images.image1.altTextEn}}"></iron-image>
       </div>
       <div>
@@ -157,6 +157,9 @@
           type: Number,
           value: 0
         }
+      },
+      tappedImage: function() {
+        console.log('tapped image!');
       }
 
     });
